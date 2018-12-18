@@ -1,0 +1,25 @@
+ 
+<my-tabs>
+    <my-tab [tabTitle]="'People'">
+        <h3>List of People</h3>
+        <people-list
+            [people]="people"
+            (addPerson)="onAddPerson()"
+            (editPerson)="onEditPerson($event)">
+        </people-list>
+        <hr/>
+        <button class="btn btn-default" (click)="onOpenAbout()">
+            <p> another tab </p>
+        </button>
+    </my-tab>
+</my-tabs>
+
+<ng-template let-person="person" #personEdit>
+    <person-edit [person]="person" (savePerson)="onPersonFormSubmit($event)"></person-edit>
+</ng-template>
+
+<ng-template #about>s
+    <p>
+        new tab.
+    </p>
+</ng-template>

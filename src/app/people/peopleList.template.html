@@ -1,0 +1,22 @@
+
+
+<table class="table table-striped">
+
+      <thead>
+        <th>Name</th>
+        <th>Surname</th>
+        <th></th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of people">
+          <td>{{ p.name }}</td>
+          <td>{{ p.surname }}</td>          
+          <td><button class="btn btn-sm btn-default" (click)="editPerson.emit(p)">Edit</button></td>
+        </tr>
+      </tbody>
+
+</table>
+
+<button class="btn btn-default" (click)="addPerson.emit()">Add new person</button>
+
